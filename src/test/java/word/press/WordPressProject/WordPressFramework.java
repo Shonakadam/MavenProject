@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class WordPressFramework {
 	WebDriver driver;
@@ -42,11 +43,14 @@ public class WordPressFramework {
 
 		// initialize the HtmlReporter
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("Resoures/wordpress.html");
+	
 		// initialize ExtentReports and attach the HtmlReporter
 		 extent = new ExtentReports();
 		
 		// attach only HtmlReporter
 		extent.attachReporter(htmlReporter);
+
+		
 		
 		 test=extent.createTest("wordpress regression");
 		test.pass("Starting with Automation");
